@@ -69,9 +69,6 @@
                     <li>
                         <a href={{ route('sample') }}>Sample</a>
                     </li>
-                    <li>
-                        <a href="#">Events</a>
-                    </li>
                     
                     @if ( Auth::user()->check() )
 
@@ -118,7 +115,7 @@
                             <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false"><span class="glyphicon glyphicon-user"></span>Events <span class="caret"></span></a>
                             <ul class="dropdown-menu">
                                 <li>
-                                    <a href={{ route('createEvent') }}>Create</a>
+                                    <a href={{ route('profile') }}>Create</a>
                                 </li>
                                 <li>
                                     <a href={{ route('profile') }}>View All</a>

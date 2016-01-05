@@ -15,20 +15,15 @@ class DatabaseSeeder extends Seeder
         Model::unguard();
 
         //$this->call(UserTableSeeder::class);
-        /*
-
+        
         $this->call('AdminSeeder');
         $this->command->info('Admin table seeded!');
 
         $this->call('CountrySeeder');
         $this->command->info('Country table seeded!');
-
-        
         
         $this->call('StateSeeder');
         $this->command->info('State table seeded!');
-
-        
         
         $this->call('CurrencySeeder');
         $this->command->info('Currency table seeded!');
@@ -51,12 +46,8 @@ class DatabaseSeeder extends Seeder
         $this->call('CsiRegionSeeder');
         $this->command->info('CsiRegion table seeded!');
 
-        
-
         $this->call('CsiStateSeeder');
         $this->command->info('CsiState table seeded!');
-
-        
 
         $this->call('CsiChapterSeeder');
         $this->command->info('CsiChapter table seeded!');
@@ -78,14 +69,7 @@ class DatabaseSeeder extends Seeder
 
         $this->call('NotificationTypeSeeder');
         $this->command->info('NotificationType table seeded!');
-            
-            */
-        $this->call('EventTypeSeeder');
-        $this->command->info('EventType table seeded!');
 
-
-      /*  $this->call('TargetAudienceSeeder');
-        $this->command->info('TargetAudienceSeeder table seeded!');*/
         
         Model::reguard();
     }
