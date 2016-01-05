@@ -101,7 +101,8 @@ Route::get('logout', 'Auth\AuthController@getLogout');
 // Authentication routes...
 Route::post('login', 'Auth\AuthController@postLogin');
 Route::get('/dashboard', ['middleware'=>'auth', 'uses'=>'UserDashboardController@index']);	
-
+Route::get('/createEvent', ['middleware'=>'auth', 'as' => 'createEvent', 'uses'=>'UserDashboardController@createEvent']);
+Route::post('/createEvent', ['middleware'=>'auth', 'as' => 'createEvent', 'uses'=>'UserDashboardController@storeEvent']);
 Route::get('/profile', ['middleware'=>'auth', 'as' => 'profile', 'uses'=>'UserDashboardController@showProfile']);
 Route::get('/confirmStudentBranch', ['middleware'=> ['auth', 'isacademic'], 'as' => 'confirmStudentBranch', 'uses'=>'UserDashboardController@confirmStudentBranch']);
 Route::post('/makeStudentBranch', ['middleware'=> ['auth', 'isacademic'], 'uses'=>'UserDashboardController@makeStudentBranch']);
