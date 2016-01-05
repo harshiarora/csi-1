@@ -9,6 +9,9 @@ use Auth;
 use Flash;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Redirect;
+use App\Http\Requests\CreateEventRequest;
+use App\Event;
+
 
 class UserDashboardController extends Controller
 {
@@ -158,5 +161,32 @@ class UserDashboardController extends Controller
     public function destroy($id)
     {
         //
+    }
+
+     public function createEvent(){
+    return view('frontend.events.create-event');
+    }
+
+     public function storeEvent(CreateEventRequest $request)
+    {
+        $event=new Event;
+       
+        $event->event_name = Input::get('event_name');
+        $event->event_type_id = Input::get('event_type_id');
+        $event->membership_id= Auth::user()->user('id');
+        $event->event_start_date = Input::get('event_start_date');
+        $event->event_end_date = Input::get('event_end_date');
+        $event->event_start_time = Input::get('event_start_time');
+        $event->event_end_time = Input::get('event_end_time');
+        $event->event_venue = Input::get('event_venue');
+        $event->event_description = Input::get('event_description');
+        $event->max_seats = Input::get('max_seats');
+        $event->payment_option = Input::get('payment_option');
+        $event->payment_deadline_date = Input::get('payment_deadline_date');
+        $event->payment_deadline_time = Input::get('payment_deadline_time');
+        $event->registration_close_date = Input::get('registration_close_date');
+        $event->registration_open_date = Input::get('registration_open_date');
+
+             $event->save();   
     }
 }
